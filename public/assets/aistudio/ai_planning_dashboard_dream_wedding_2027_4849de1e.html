@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&amp;family=Outfit:wght@500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"secondary-container":"#494566","on-primary-fixed":"#2c0051","on-background":"#e8e0ec","on-primary-fixed-variant":"#6900b3","secondary-fixed":"#e5deff","on-secondary-container":"#bab4da","surface-container-highest":"#37333c","primary-container":"#b76dff","on-error":"#690005","surface-variant":"#37333c","on-tertiary-container":"#400071","on-error-container":"#ffdad6","primary-fixed":"#f0dbff","background":"#15121a","on-surface-variant":"#cfc2d6","on-primary":"#490080","error-container":"#93000a","surface-container-high":"#2c2831","surface-container":"#211e27","on-secondary-fixed-variant":"#474363","on-primary-container":"#400071","tertiary-fixed-dim":"#ddb8ff","surface":"#15121a","secondary-fixed-dim":"#c8c2e9","on-tertiary-fixed-variant":"#62259b","inverse-surface":"#e8e0ec","inverse-primary":"#842bd2","tertiary-fixed":"#f0dbff","primary":"#ddb7ff","surface-container-lowest":"#100d15","surface-container-low":"#1d1a22","outline-variant":"#4d4354","on-secondary-fixed":"#1b1735","surface-bright":"#3b3741","tertiary":"#ddb8ff","inverse-on-surface":"#332f38","surface-tint":"#ddb7ff","on-tertiary":"#490081","on-tertiary-fixed":"#2c0051","on-surface":"#e8e0ec","on-secondary":"#302c4b","secondary":"#c8c2e9","error":"#ffb4ab","tertiary-container":"#b175ec","surface-dim":"#15121a","primary-fixed-dim":"#ddb7ff","outline":"#988d9f"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"gutter":"1.5rem","space-xl":"2.5rem","space-sm":"0.5rem","margin":"2.5rem","space-lg":"1.5rem","space-xs":"0.25rem","space-md":"1rem","margin-mobile":"1rem","gutter-sm":"1rem","space-2xl":"4rem"},"fontFamily":{"body-sm":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"label-mono-md":["JetBrains Mono"],"display-hero":["Outfit"],"headline-xl":["Outfit"],"display-hero-mobile":["Outfit"],"headline-sm":["Outfit"],"label-mono-sm":["JetBrains Mono"],"headline-lg":["Outfit"],"caption":["Plus Jakarta Sans"],"headline-xl-mobile":["Outfit"],"body-lg":["Plus Jakarta Sans"],"headline-md":["Outfit"]},"fontSize":{"body-sm":["13px",{"lineHeight":"20px","letterSpacing":"0.005em","fontWeight":"400"}],"body-md":["15px",{"lineHeight":"24px","letterSpacing":"0em","fontWeight":"400"}],"label-mono-md":["13px",{"lineHeight":"18px","letterSpacing":"0.04em","fontWeight":"500"}],"display-hero":["56px",{"lineHeight":"64px","letterSpacing":"-0.03em","fontWeight":"700"}],"headline-xl":["40px",{"lineHeight":"48px","letterSpacing":"-0.02em","fontWeight":"600"}],"display-hero-mobile":["36px",{"lineHeight":"44px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-sm":["20px",{"lineHeight":"28px","letterSpacing":"-0.005em","fontWeight":"500"}],"label-mono-sm":["11px",{"lineHeight":"16px","letterSpacing":"0.06em","fontWeight":"500"}],"headline-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.015em","fontWeight":"600"}],"caption":["12px",{"lineHeight":"16px","letterSpacing":"0.01em","fontWeight":"500"}],"headline-xl-mobile":["28px",{"lineHeight":"36px","letterSpacing":"-0.015em","fontWeight":"600"}],"body-lg":["18px",{"lineHeight":"28px","letterSpacing":"-0.005em","fontWeight":"400"}],"headline-md":["24px",{"lineHeight":"32px","letterSpacing":"-0.01em","fontWeight":"600"}]}}}};</script></head><body class="bg-background font-body-md text-body-md text-on-surface min-h-screen relative selection:bg-primary selection:text-on-primary"><div class="pointer-events-none fixed inset-0 z-0 bg-[radial-gradient(circle_at_20%_20%,rgba(183,109,255,0.08)_0%,rgba(21,18,26,0)_60%)]"></div><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest z-50 flex flex-col shadow-[1px_0_16px_rgba(0,0,0,0.4)]"><div class="h-20 px-space-md flex items-center gap-space-sm"><img alt="Eventora AI Logo" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XgEGVjjFe8nY2VwVVvfgQP1gk6OiQnsYcBACjM4tJ8CfjFc57n88_LzX4cLYpMI7bxItRcdU9Yu9LhWx_-fvZonzoilQrn50H2NR035f7Q4FLnhfasDRaGxW5mhK7Ya2iOuMIvt5NkYVCc3aRy7zkI8CT2rVSWzAqqGxpbeKLFxU_bpKEbLEL86L6oqVwuFw9lfXZ_OdStO9ForPIsWWaBagQkJcMY90f9pka1reR0Wc9uW1njfArjavA"/><span class="font-headline-sm text-headline-sm tracking-tight text-on-surface">Eventora<span class="text-primary">.ai</span></span><span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-mono-sm text-label-mono-sm">v2.4</span></div><div class="px-space-md py-space-sm"><div class="p-3 rounded-xl bg-surface-container-low flex flex-col gap-1"><span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant uppercase">Active Project</span><span class="font-headline-sm text-[15px] text-on-surface truncate">Dream Wedding 2027</span><span class="font-label-mono-md text-label-mono-md text-primary font-bold">₹5,00,000 Budget</span></div></div><nav class="flex-1 px-space-md py-space-md flex flex-col gap-1.5 overflow-y-auto" data-active-classes="bg-primary-container text-on-primary-container font-bold rounded-xl"><a aria-current="page" class="flex items-center gap-3 px-4 py-3 transition-colors bg-primary-container text-on-primary-container font-bold rounded-xl" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span><span>Dashboard</span></a><a class="flex items-center gap-3 px-4 py-3 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="plan-event" href="#"><span class="material-symbols-outlined text-[20px]">auto_awesome</span><span>Plan Event</span></a><a class="flex items-center gap-3 px-4 py-3 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="budget" href="#"><span class="material-symbols-outlined text-[20px]">payments</span><span>Budget Tracker</span></a><a class="flex items-center gap-3 px-4 py-3 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="timeline" href="#"><span class="material-symbols-outlined text-[20px]">schedule</span><span>Timeline</span></a><a class="flex items-center gap-3 px-4 py-3 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="ai-copilot" href="#"><span class="material-symbols-outlined text-[20px]">psychology</span><span>AI Copilot</span></a><a class="flex items-center gap-3 px-4 py-3 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="explore" href="#"><span class="material-symbols-outlined text-[20px]">explore</span><span>Explore Inspirations</span></a></nav><div class="p-space-md bg-surface-container-low/50"><div class="flex items-center gap-2 p-2 rounded-lg bg-surface-container-high"><span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span><span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant truncate">Gemini 2.5 Pro Running</span></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-20 bg-surface-container-lowest/80 backdrop-blur-2xl shadow-[0_1px_16px_rgba(0,0,0,0.3)] z-40 flex items-center justify-between px-space-xl"><div class="flex items-center gap-space-md"><img alt="Eventora AI Logo" class="h-6 w-auto object-contain lg:hidden" src="https://lh3.googleusercontent.com/aida/AEtjO1XgEGVjjFe8nY2VwVVvfgQP1gk6OiQnsYcBACjM4tJ8CfjFc57n88_LzX4cLYpMI7bxItRcdU9Yu9LhWx_-fvZonzoilQrn50H2NR035f7Q4FLnhfasDRaGxW5mhK7Ya2iOuMIvt5NkYVCc3aRy7zkI8CT2rVSWzAqqGxpbeKLFxU_bpKEbLEL86L6oqVwuFw9lfXZ_OdStO9ForPIsWWaBagQkJcMY90f9pka1reR0Wc9uW1njfArjavA"/><div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-low text-on-surface-variant font-label-mono-sm text-label-mono-sm"><span class="text-primary font-bold">₹</span><span>INR Active</span></div></div><div class="flex items-center gap-space-md"><button aria-label="Notifications" class="relative p-2 rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-primary-container shadow-[0_0_8px_#b76dff]"></span></button><button class="flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary-container text-on-primary-container font-headline-sm text-[14px] shadow-[0_0_24px_rgba(183,109,255,0.35)] hover:shadow-[0_0_32px_rgba(183,109,255,0.55)] transition-all"><span>Create Event</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="relative z-10 w-full pt-20 px-space-xl bg-background"><div class="flex flex-col w-full pb-space-2xl gap-space-xl">
+<!-- TOP HEADER / EVENT TELEMETRY STRIP -->
+<section class="relative w-full rounded-xl bg-surface-container-low p-space-lg shadow-xl overflow-hidden">
+<div class="absolute -right-20 -top-20 w-96 h-96 bg-primary-container/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-mono-sm text-label-mono-sm uppercase tracking-wider flex items-center gap-1.5 shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-ping"></span>
+            Verified AI Blueprint
+          </span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-mono-sm text-label-mono-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">verified</span>
+            Gemini 2.5 Pro Neural Sync
+          </span>
+</div>
+<h1 class="font-display-hero text-display-hero tracking-tight text-on-surface flex items-center gap-3">
+          Dream Wedding 2027
+        </h1>
+<div class="flex items-center gap-3 text-on-surface-variant font-label-mono-md text-label-mono-md flex-wrap">
+<span class="flex items-center gap-1.5 text-primary">
+<span class="material-symbols-outlined text-[16px]">hourglass_top</span>
+            242 Days Remaining
+          </span>
+<span class="text-outline">/</span>
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span>
+            Nov 18, 2027
+          </span>
+<span class="text-outline">/</span>
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+            Jaipur, Rajasthan
+          </span>
+</div>
+</div>
+<!-- Quick Action Pills -->
+<div class="flex items-center gap-2 flex-wrap">
+<button class="flex items-center gap-2 px-4 py-2.5 rounded-full bg-surface-container-high text-on-surface font-body-sm text-body-sm shadow-sm hover:bg-surface-container-highest transition-all group">
+<span class="material-symbols-outlined text-[18px] text-primary group-hover:scale-110 transition-transform">picture_as_pdf</span>
+<span>Export Blueprint</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-2.5 rounded-full bg-surface-container-high text-on-surface font-body-sm text-body-sm shadow-sm hover:bg-surface-container-highest transition-all group">
+<span class="material-symbols-outlined text-[18px] text-secondary group-hover:rotate-12 transition-transform">group_add</span>
+<span>Share with Co-Planner</span>
+</button>
+<button class="flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary-container text-on-primary-container font-headline-sm text-[14px] shadow-[0_0_24px_rgba(183,109,255,0.4)] hover:shadow-[0_0_32px_rgba(183,109,255,0.65)] hover:scale-[1.02] active:scale-[0.98] transition-all">
+<span class="material-symbols-outlined text-[18px] animate-spin" style="animation-duration: 6s;">magic_button</span>
+<span>AI Re-Optimize</span>
+</button>
+</div>
+</div>
+</section>
+<!-- HIGH-IMPACT FINANCIAL & KPI METRICS GRID -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-space-md w-full">
+<!-- CARD 1: Total Budget -->
+<div class="relative rounded-xl bg-surface-container p-space-md shadow-xl flex flex-col justify-between overflow-hidden group hover:bg-surface-container-high transition-all">
+<div class="flex items-center justify-between text-on-surface-variant font-label-mono-sm text-label-mono-sm uppercase tracking-wider">
+<span>Total Ceiling</span>
+<span class="material-symbols-outlined text-primary text-[18px]">account_balance_wallet</span>
+</div>
+<div class="my-3">
+<div class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight">₹5,00,000</div>
+<p class="font-caption text-caption text-on-surface-variant mt-1">Allocated ceiling • ₹2,85,000 Free</p>
+</div>
+<!-- Mini Sparkline inline SVG -->
+<div class="w-full pt-2">
+<svg class="w-full h-8 text-primary overflow-visible" fill="none" viewbox="0 0 100 24">
+<path d="M0 20 Q 20 18, 40 12 T 70 8 T 100 4" stroke="currentColor" stroke-linecap="round" stroke-width="2.5"></path>
+<path d="M0 20 Q 20 18, 40 12 T 70 8 T 100 4 L 100 24 L 0 24 Z" fill="currentColor" fill-opacity="0.12"></path>
+</svg>
+</div>
+</div>
+<!-- CARD 2: Actual Spent -->
+<div class="relative rounded-xl bg-surface-container p-space-md shadow-xl flex flex-col justify-between overflow-hidden group hover:bg-surface-container-high transition-all">
+<div class="flex items-center justify-between text-on-surface-variant font-label-mono-sm text-label-mono-sm uppercase tracking-wider">
+<span>Actual Spent</span>
+<span class="material-symbols-outlined text-primary text-[18px]">credit_card</span>
+</div>
+<div class="my-3">
+<div class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight">₹2,15,000</div>
+<div class="flex items-center gap-1.5 mt-1.5">
+<span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+<span class="font-label-mono-sm text-label-mono-sm text-emerald-300">Within Safe Threshold</span>
+</div>
+</div>
+<div class="w-full bg-surface-container-lowest rounded-full h-2 overflow-hidden">
+<div class="bg-primary-container h-full rounded-full transition-all duration-1000" style="width: 43%;"></div>
+</div>
+<span class="font-caption text-caption text-on-surface-variant mt-2">43% disbursed to vendors</span>
+</div>
+<!-- CARD 3: Remaining Budget -->
+<div class="relative rounded-xl bg-surface-container p-space-md shadow-xl flex flex-col justify-between overflow-hidden group hover:bg-surface-container-high transition-all">
+<div class="flex items-center justify-between text-on-surface-variant font-label-mono-sm text-label-mono-sm uppercase tracking-wider">
+<span>Available Vault</span>
+<span class="material-symbols-outlined text-primary text-[18px]">savings</span>
+</div>
+<div class="my-3">
+<div class="font-headline-lg text-headline-lg font-bold text-primary tracking-tight">₹2,85,000</div>
+<p class="font-caption text-caption text-on-surface-variant mt-1">57% liquidity available for decor &amp; dining</p>
+</div>
+<div class="flex items-center justify-between pt-1 font-label-mono-sm text-label-mono-sm text-on-surface-variant">
+<span>Reserved: ₹1.4L</span>
+<span>Liquid: ₹1.45L</span>
+</div>
+</div>
+<!-- CARD 4: Planning Progress -->
+<div class="relative rounded-xl bg-surface-container p-space-md shadow-xl flex flex-col justify-between overflow-hidden group hover:bg-surface-container-high transition-all">
+<div class="flex items-center justify-between text-on-surface-variant font-label-mono-sm text-label-mono-sm uppercase tracking-wider">
+<span>Orchestration</span>
+<span class="material-symbols-outlined text-primary text-[18px]">task_alt</span>
+</div>
+<div class="flex items-center justify-between my-2">
+<div>
+<div class="font-headline-lg text-headline-lg font-bold text-on-surface">68%</div>
+<span class="font-caption text-caption text-on-surface-variant">14 of 22 Tasks Done</span>
+</div>
+<!-- Circular Progress Ring SVG -->
+<div class="relative w-12 h-12">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 36 36">
+<path class="text-surface-container-highest" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3.5"></path>
+<path class="text-primary-container" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="68, 100" stroke-linecap="round" stroke-width="3.5"></path>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center font-label-mono-sm text-[10px] text-on-surface">
+            +3
+          </div>
+</div>
+</div>
+<div class="font-label-mono-sm text-label-mono-sm text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">bolt</span>
+        Ahead of 2027 Schedule
+      </div>
+</div>
+<!-- CARD 5: Guest Confirmations -->
+<div class="relative rounded-xl bg-surface-container p-space-md shadow-xl flex flex-col justify-between overflow-hidden group hover:bg-surface-container-high transition-all">
+<div class="flex items-center justify-between text-on-surface-variant font-label-mono-sm text-label-mono-sm uppercase tracking-wider">
+<span>RSVP Stream</span>
+<span class="material-symbols-outlined text-primary text-[18px]">group</span>
+</div>
+<div class="my-2">
+<div class="font-headline-md text-headline-md font-bold text-on-surface">238 / 350</div>
+<p class="font-caption text-caption text-on-surface-variant mt-0.5">68% accepted • 32 pend • 12 decl</p>
+</div>
+<div class="flex items-center -space-x-2 pt-1">
+<div class="w-7 h-7 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container text-caption font-bold shadow-md">AP</div>
+<div class="w-7 h-7 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface text-caption font-bold shadow-md">RV</div>
+<div class="w-7 h-7 rounded-full bg-primary flex items-center justify-center text-on-primary text-caption font-bold shadow-md">SK</div>
+<div class="w-7 h-7 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container text-caption font-bold shadow-md">MJ</div>
+<div class="w-7 h-7 rounded-full bg-surface-container-high flex items-center justify-center text-primary font-label-mono-sm text-[10px] font-bold shadow-md">+234</div>
+</div>
+</div>
+</section>
+<!-- MAIN CONTENT SPLIT LAYOUT -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg w-full">
+<!-- LEFT COLUMN (8 cols / ~2/3) -->
+<div class="lg:col-span-8 flex flex-col gap-space-lg">
+<!-- HERO VISUAL ANCHOR: VENUE MOCKUP & RUN OF SHOW STATE -->
+<div class="relative w-full rounded-xl bg-surface-container overflow-hidden shadow-xl">
+<div class="relative h-64 w-full">
+<img class="w-full h-full object-cover" data-alt="Breathtaking night view of Jagmandir Island Palace in Udaipur Jaipur lit up with ethereal deep violet and gold illumination, reflection on dark water, floating lotus firepots, luxury floral Mandap canopy, hyper-realistic, architectural editorial photography, cinematic violet ambient lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEKGD1p96eWZNR2Ktk0QaLx8dbsuFzYSRMrDFiPmy358n4tTvr-TVMXIZ5EmZFo091VcNnC9D4eK85GiTl3_AIA8TvPGR6bH92JkQbIGDWgi_zX214gQZ3x5RMQDQ06aXhTnO2pdjLRRFpHovzTPsPrIOWkFTFAsOfohOYAoBANBi94z0-uS10TPxpLQjY-gfdGGqgWWK4rtiVR4OpOT-kJdNBgZ1X8NxJObH9HHfM1kixczb_lW4V"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-surface-container/60 to-transparent"></div>
+<div class="absolute top-4 left-4 flex items-center gap-2">
+<span class="px-3 py-1 rounded-full bg-surface-container-lowest/80 backdrop-blur-md text-on-surface font-label-mono-sm text-label-mono-sm flex items-center gap-1.5 shadow-md">
+<span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+              Venue Secured
+            </span>
+<span class="px-3 py-1 rounded-full bg-surface-container-lowest/80 backdrop-blur-md text-primary font-label-mono-sm text-label-mono-sm shadow-md">
+              Jagmandir Courtyard
+            </span>
+</div>
+<div class="absolute bottom-4 left-4 right-4 flex items-end justify-between">
+<div>
+<span class="font-label-mono-sm text-label-mono-sm text-primary uppercase tracking-widest">Main Ceremony Venue</span>
+<h2 class="font-headline-md text-headline-md font-bold text-on-surface tracking-tight">The Imperial Mandap Pavilion</h2>
+</div>
+<button class="px-4 py-2 rounded-full bg-surface-container-highest/90 backdrop-blur-md text-on-surface hover:text-primary font-body-sm text-body-sm flex items-center gap-2 transition-colors">
+<span class="material-symbols-outlined text-[16px]">3d_rotation</span>
+<span>Inspect 3D CAD Mockup</span>
+</button>
+</div>
+</div>
+</div>
+<!-- CRITICAL DEADLINES SECTION -->
+<div class="rounded-xl bg-surface-container p-space-lg shadow-xl flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[24px]">crisis_alert</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Upcoming Critical Deadlines</h3>
+</div>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant uppercase">3 Required Actions</span>
+</div>
+<div class="flex flex-col gap-space-sm">
+<!-- Task 1 -->
+<div class="p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container-high transition-all flex flex-col md:flex-row md:items-center justify-between gap-space-sm shadow-sm">
+<div class="flex items-start gap-3">
+<div class="p-2.5 rounded-lg bg-error-container text-on-error-container shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px]">account_balance</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="font-headline-sm text-[16px] font-semibold text-on-surface">Pay 2nd deposit for Jagmandir Palace Venue</span>
+<span class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-mono-sm text-[10px] font-bold uppercase">Priority: High</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Tranche 2 settlement required to lock night curfew extensions with Jaipur local authorities.</p>
+<div class="flex items-center gap-3 font-label-mono-sm text-label-mono-sm text-primary mt-1">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">alarm</span>
+                    Due in 3 days
+                  </span>
+<span>•</span>
+<span>Escrow Target: ₹75,000</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2 self-end md:self-center shrink-0">
+<button class="px-4 py-2 rounded-full bg-primary-container text-on-primary-container font-headline-sm text-[13px] shadow-md hover:scale-105 transition-all">Authorize ₹75k</button>
+</div>
+</div>
+<!-- Task 2 -->
+<div class="p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container-high transition-all flex flex-col md:flex-row md:items-center justify-between gap-space-sm shadow-sm">
+<div class="flex items-start gap-3">
+<div class="p-2.5 rounded-lg bg-secondary-container text-on-secondary-container shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px]">restaurant_menu</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="font-headline-sm text-[16px] font-semibold text-on-surface">Finalize Menu Tasting with Royal Feast Caterers</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-mono-sm text-[10px] font-bold uppercase">Priority: Medium</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Approve 8 bespoke fusion appetizer live counters &amp; royal Rajasthani thali curation.</p>
+<div class="flex items-center gap-3 font-label-mono-sm text-label-mono-sm text-on-surface-variant mt-1">
+<span class="flex items-center gap-1 text-secondary">
+<span class="material-symbols-outlined text-[14px]">event</span>
+                    Due in 6 days
+                  </span>
+<span>•</span>
+<span>5-person chef tasting trial</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2 self-end md:self-center shrink-0">
+<button class="px-4 py-2 rounded-full bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-body-sm text-body-sm transition-all">Select Menu</button>
+</div>
+</div>
+<!-- Task 3 -->
+<div class="p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container-high transition-all flex flex-col md:flex-row md:items-center justify-between gap-space-sm shadow-sm">
+<div class="flex items-start gap-3">
+<div class="p-2.5 rounded-lg bg-surface-container-highest text-primary shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px]">palette</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="font-headline-sm text-[16px] font-semibold text-on-surface">Review floral mockups with Violet Dreams Decor</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface font-label-mono-sm text-[10px] font-bold uppercase">Priority: Normal</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Examine cold-weather orchid endurance and mood-matched ambient violet uplighting.</p>
+<div class="flex items-center gap-3 font-label-mono-sm text-label-mono-sm text-on-surface-variant mt-1">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+                    Due in 9 days
+                  </span>
+<span>•</span>
+<span>3D Layout v4 Ready</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2 self-end md:self-center shrink-0">
+<button class="px-4 py-2 rounded-full bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-body-sm text-body-sm transition-all">Review 3D</button>
+</div>
+</div>
+</div>
+</div>
+<!-- AI OPTIMIZATION HIGHLIGHTS CARD -->
+<div class="rounded-xl bg-gradient-to-br from-surface-container-low via-surface-container to-surface-container-high p-space-lg shadow-xl relative overflow-hidden">
+<div class="absolute top-0 right-0 w-80 h-80 bg-primary-container/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined text-[18px]">psychology</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Autonomous Planning Insights</h3>
+<span class="font-caption text-caption text-on-surface-variant">Continuous calculations updated 4 mins ago</span>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-primary-container/20 text-primary font-label-mono-sm text-label-mono-sm">99.4% Confidence</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Insight 1: Cost Optimization -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest/70 backdrop-blur-md flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="px-2 py-0.5 rounded-full bg-emerald-950 text-emerald-300 font-label-mono-sm text-label-mono-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">trending_down</span>
+                  Saved ₹32,000
+                </span>
+<span class="text-caption font-label-mono-sm text-on-surface-variant">Entertainment</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface">Recommended traditional brass musicians contracted directly through Jaipur Artisan Guild over corporate agency rates.</p>
+<div class="flex items-center justify-between pt-1">
+<span class="font-caption text-caption text-secondary">Pre-approved by co-planner</span>
+<button class="font-label-mono-sm text-label-mono-sm text-primary hover:underline">Apply Delta</button>
+</div>
+</div>
+<!-- Insight 2: Weather & Sunset Timing -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest/70 backdrop-blur-md flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="px-2 py-0.5 rounded-full bg-amber-950 text-amber-300 font-label-mono-sm text-label-mono-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">wb_twilight</span>
+                  Weather Advisory
+                </span>
+<span class="text-caption font-label-mono-sm text-on-surface-variant">Jaipur Climatology</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface">24°C expected during pheras. Sunset at 5:48 PM coincides with golden hour mandap vows for optimum natural lighting.</p>
+<div class="flex items-center justify-between pt-1">
+<span class="font-caption text-caption text-on-surface-variant">Shift pheras 12m earlier</span>
+<button class="font-label-mono-sm text-label-mono-sm text-primary hover:underline">Auto-Sync Run-of-Show</button>
+</div>
+</div>
+</div>
+<div class="p-3 rounded-lg bg-surface-container-high/60 flex items-center justify-between text-body-sm text-body-sm text-on-surface-variant">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">info</span>
+              Next scheduled vendor settlement execution in 72 hours via automated escrow.
+            </span>
+<button class="font-label-mono-sm text-label-mono-sm text-primary hover:underline shrink-0 ml-2">Audit Ledger</button>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN (4 cols / ~1/3) -->
+<div class="lg:col-span-4 flex flex-col gap-space-lg">
+<!-- VENDOR STATUS TRACKER -->
+<div class="rounded-xl bg-surface-container p-space-lg shadow-xl flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">storefront</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Vendor Status</h3>
+</div>
+<button class="text-caption font-label-mono-sm text-primary hover:underline">+ New Vendor</button>
+</div>
+<div class="flex flex-col gap-space-xs">
+<!-- Venue Item -->
+<div class="p-3 rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">castle</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-[14px] text-on-surface">Jagmandir Island</span>
+<span class="font-caption text-caption text-on-surface-variant">Main Venue &amp; Suite</span>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-emerald-950 text-emerald-300 font-label-mono-sm text-[11px] font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Confirmed
+            </span>
+</div>
+<!-- Catering Item -->
+<div class="p-3 rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[18px]">skillet</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-[14px] text-on-surface">Royal Feast Caterers</span>
+<span class="font-caption text-caption text-on-surface-variant">Bespoke Dining</span>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-mono-sm text-[11px] font-semibold">
+              80% Draft
+            </span>
+</div>
+<!-- Decor Item -->
+<div class="p-3 rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[18px]">local_florist</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-[14px] text-on-surface">Violet Dreams Decor</span>
+<span class="font-caption text-caption text-on-surface-variant">Floral &amp; Lighting</span>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-amber-950 text-amber-300 font-label-mono-sm text-[11px] font-semibold">
+              In Review
+            </span>
+</div>
+<!-- Photo Item -->
+<div class="p-3 rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">photo_camera</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-[14px] text-on-surface">Lumière Cinematics</span>
+<span class="font-caption text-caption text-on-surface-variant">4K Drone + Stills</span>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-emerald-950 text-emerald-300 font-label-mono-sm text-[11px] font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Confirmed
+            </span>
+</div>
+</div>
+</div>
+<!-- QUICK AI COPILOT PROMPT WIDGET -->
+<div class="rounded-xl bg-surface-container p-space-lg shadow-xl relative overflow-hidden flex flex-col gap-space-md">
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-full bg-primary animate-pulse"></div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Eventora AI Copilot</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Ask generative orchestrator to benchmark vendor proposals, run contract analysis, or adjust Rajasthan tax calculations.
+        </p>
+<!-- Prompt input bar -->
+<div class="relative w-full">
+<input class="w-full pl-4 pr-12 py-3 rounded-full bg-surface-container-lowest text-on-surface placeholder:text-outline text-body-sm font-body-sm focus:outline-none focus:ring-2 focus:ring-primary shadow-inner" placeholder="Ask Copilot to negotiate vendor quotes..." type="text"/>
+<button class="absolute right-1.5 top-1.5 bottom-1.5 w-9 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center hover:scale-105 active:scale-95 transition-all shadow-md">
+<span class="material-symbols-outlined text-[18px]">send</span>
+</button>
+</div>
+<!-- Suggestion Chips -->
+<div class="flex flex-wrap gap-1.5">
+<button class="px-3 py-1 rounded-full bg-surface-container-high hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface font-label-mono-sm text-[11px] transition-all">
+            "Compare caterer per-plate rate"
+          </button>
+<button class="px-3 py-1 rounded-full bg-surface-container-high hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface font-label-mono-sm text-[11px] transition-all">
+            "Generate Baraat route timing"
+          </button>
+</div>
+</div>
+<!-- RECENT ACTIVITY FEED -->
+<div class="rounded-xl bg-surface-container p-space-lg shadow-xl flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Recent Activity</h3>
+<span class="material-symbols-outlined text-outline text-[18px]">history</span>
+</div>
+<div class="relative pl-6 flex flex-col gap-space-md">
+<!-- Timeline vertical thread line -->
+<div class="absolute left-2.5 top-2 bottom-2 w-0.5 bg-surface-container-highest"></div>
+<!-- Feed Item 1 -->
+<div class="relative flex flex-col gap-0.5">
+<div class="absolute -left-6 top-1 w-2.5 h-2.5 rounded-full bg-primary ring-4 ring-surface-container"></div>
+<span class="font-headline-sm text-[13px] text-on-surface font-medium">Escrow disbursement prepared</span>
+<p class="font-body-sm text-[12px] text-on-surface-variant">₹75,000 pending second verification for Jagmandir Palace Venue.</p>
+<span class="font-label-mono-sm text-[10px] text-outline">18 mins ago • Auto-Trigger</span>
+</div>
+<!-- Feed Item 2 -->
+<div class="relative flex flex-col gap-0.5">
+<div class="absolute -left-6 top-1 w-2.5 h-2.5 rounded-full bg-secondary-container ring-4 ring-surface-container"></div>
+<span class="font-headline-sm text-[13px] text-on-surface font-medium">Guest RSVP milestone unlocked</span>
+<p class="font-body-sm text-[12px] text-on-surface-variant">238 attendees reached. Dietary preferences logged into caterer sheet.</p>
+<span class="font-label-mono-sm text-[10px] text-outline">2 hours ago • Guest Portal</span>
+</div>
+<!-- Feed Item 3 -->
+<div class="relative flex flex-col gap-0.5">
+<div class="absolute -left-6 top-1 w-2.5 h-2.5 rounded-full bg-surface-container-highest ring-4 ring-surface-container"></div>
+<span class="font-headline-sm text-[13px] text-on-surface font-medium">AI Model Optimized Brass Band</span>
+<p class="font-body-sm text-[12px] text-on-surface-variant">Replaced Agency quote: saved ₹32,000 in total allocation.</p>
+<span class="font-label-mono-sm text-[10px] text-outline">5 hours ago • Gemini Engine</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></main></div></body></html>

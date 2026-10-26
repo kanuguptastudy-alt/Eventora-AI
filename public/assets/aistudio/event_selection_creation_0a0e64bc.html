@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&amp;family=Outfit:wght@500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"secondary-container":"#494566","on-primary-fixed":"#2c0051","on-background":"#e8e0ec","on-primary-fixed-variant":"#6900b3","secondary-fixed":"#e5deff","on-secondary-container":"#bab4da","surface-container-highest":"#37333c","primary-container":"#b76dff","on-error":"#690005","surface-variant":"#37333c","on-tertiary-container":"#400071","on-error-container":"#ffdad6","primary-fixed":"#f0dbff","background":"#15121a","on-surface-variant":"#cfc2d6","on-primary":"#490080","error-container":"#93000a","surface-container-high":"#2c2831","surface-container":"#211e27","on-secondary-fixed-variant":"#474363","on-primary-container":"#400071","tertiary-fixed-dim":"#ddb8ff","surface":"#15121a","secondary-fixed-dim":"#c8c2e9","on-tertiary-fixed-variant":"#62259b","inverse-surface":"#e8e0ec","inverse-primary":"#842bd2","tertiary-fixed":"#f0dbff","primary":"#ddb7ff","surface-container-lowest":"#100d15","surface-container-low":"#1d1a22","outline-variant":"#4d4354","on-secondary-fixed":"#1b1735","surface-bright":"#3b3741","tertiary":"#ddb8ff","inverse-on-surface":"#332f38","surface-tint":"#ddb7ff","on-tertiary":"#490081","on-tertiary-fixed":"#2c0051","on-surface":"#e8e0ec","on-secondary":"#302c4b","secondary":"#c8c2e9","error":"#ffb4ab","tertiary-container":"#b175ec","surface-dim":"#15121a","primary-fixed-dim":"#ddb7ff","outline":"#988d9f"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"gutter":"1.5rem","space-xl":"2.5rem","space-sm":"0.5rem","margin":"2.5rem","space-lg":"1.5rem","space-xs":"0.25rem","space-md":"1rem","margin-mobile":"1rem","gutter-sm":"1rem","space-2xl":"4rem"},"fontFamily":{"body-sm":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"label-mono-md":["JetBrains Mono"],"display-hero":["Outfit"],"headline-xl":["Outfit"],"display-hero-mobile":["Outfit"],"headline-sm":["Outfit"],"label-mono-sm":["JetBrains Mono"],"headline-lg":["Outfit"],"caption":["Plus Jakarta Sans"],"headline-xl-mobile":["Outfit"],"body-lg":["Plus Jakarta Sans"],"headline-md":["Outfit"]},"fontSize":{"body-sm":["13px",{"lineHeight":"20px","letterSpacing":"0.005em","fontWeight":"400"}],"body-md":["15px",{"lineHeight":"24px","letterSpacing":"0em","fontWeight":"400"}],"label-mono-md":["13px",{"lineHeight":"18px","letterSpacing":"0.04em","fontWeight":"500"}],"display-hero":["56px",{"lineHeight":"64px","letterSpacing":"-0.03em","fontWeight":"700"}],"headline-xl":["40px",{"lineHeight":"48px","letterSpacing":"-0.02em","fontWeight":"600"}],"display-hero-mobile":["36px",{"lineHeight":"44px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-sm":["20px",{"lineHeight":"28px","letterSpacing":"-0.005em","fontWeight":"500"}],"label-mono-sm":["11px",{"lineHeight":"16px","letterSpacing":"0.06em","fontWeight":"500"}],"headline-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.015em","fontWeight":"600"}],"caption":["12px",{"lineHeight":"16px","letterSpacing":"0.01em","fontWeight":"500"}],"headline-xl-mobile":["28px",{"lineHeight":"36px","letterSpacing":"-0.015em","fontWeight":"600"}],"body-lg":["18px",{"lineHeight":"28px","letterSpacing":"-0.005em","fontWeight":"400"}],"headline-md":["24px",{"lineHeight":"32px","letterSpacing":"-0.01em","fontWeight":"600"}]}}}};</script></head><body class="bg-background font-body-md text-body-md text-on-surface min-h-screen relative selection:bg-primary selection:text-on-primary"><div class="pointer-events-none fixed inset-0 z-0 bg-[radial-gradient(circle_at_20%_20%,rgba(183,109,255,0.08)_0%,rgba(21,18,26,0)_60%)]"></div><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest z-50 flex flex-col shadow-[1px_0_16px_rgba(0,0,0,0.4)]"><div class="h-20 px-space-md flex items-center gap-space-sm"><img alt="Eventora AI Logo" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XgEGVjjFe8nY2VwVVvfgQP1gk6OiQnsYcBACjM4tJ8CfjFc57n88_LzX4cLYpMI7bxItRcdU9Yu9LhWx_-fvZonzoilQrn50H2NR035f7Q4FLnhfasDRaGxW5mhK7Ya2iOuMIvt5NkYVCc3aRy7zkI8CT2rVSWzAqqGxpbeKLFxU_bpKEbLEL86L6oqVwuFw9lfXZ_OdStO9ForPIsWWaBagQkJcMY90f9pka1reR0Wc9uW1njfArjavA"/><span class="font-headline-sm text-headline-sm tracking-tight text-on-surface">Eventora<span class="text-primary">.ai</span></span><span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-mono-sm text-label-mono-sm">v2.4</span></div><div class="px-space-md py-space-sm"><div class="p-3 rounded-xl bg-surface-container-low flex flex-col gap-1"><span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant uppercase">Active Project</span><span class="font-headline-sm text-[15px] text-on-surface truncate">Dream Wedding 2027</span><span class="font-label-mono-md text-label-mono-md text-primary font-bold">₹5,00,000 Budget</span></div></div><nav class="flex-1 px-space-md py-space-md flex flex-col gap-1.5 overflow-y-auto" data-active-classes="bg-primary-container text-on-primary-container font-bold rounded-xl"><a class="flex items-center gap-3 px-4 py-3 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span><span>Dashboard</span></a><a aria-current="page" class="flex items-center gap-3 px-4 py-3 transition-colors bg-primary-container text-on-primary-container font-bold rounded-xl" data-path="plan-event" href="#"><span class="material-symbols-outlined text-[20px]">auto_awesome</span><span>Plan Event</span></a><a class="flex items-center gap-3 px-4 py-3 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="budget" href="#"><span class="material-symbols-outlined text-[20px]">payments</span><span>Budget Tracker</span></a><a class="flex items-center gap-3 px-4 py-3 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="timeline" href="#"><span class="material-symbols-outlined text-[20px]">schedule</span><span>Timeline</span></a><a class="flex items-center gap-3 px-4 py-3 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="ai-copilot" href="#"><span class="material-symbols-outlined text-[20px]">psychology</span><span>AI Copilot</span></a><a class="flex items-center gap-3 px-4 py-3 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="explore" href="#"><span class="material-symbols-outlined text-[20px]">explore</span><span>Explore Inspirations</span></a></nav><div class="p-space-md bg-surface-container-low/50"><div class="flex items-center gap-2 p-2 rounded-lg bg-surface-container-high"><span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span><span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant truncate">Gemini 2.5 Pro Running</span></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-20 bg-surface-container-lowest/80 backdrop-blur-2xl shadow-[0_1px_16px_rgba(0,0,0,0.3)] z-40 flex items-center justify-between px-space-xl"><div class="flex items-center gap-space-md"><img alt="Eventora AI Logo" class="h-6 w-auto object-contain lg:hidden" src="https://lh3.googleusercontent.com/aida/AEtjO1XgEGVjjFe8nY2VwVVvfgQP1gk6OiQnsYcBACjM4tJ8CfjFc57n88_LzX4cLYpMI7bxItRcdU9Yu9LhWx_-fvZonzoilQrn50H2NR035f7Q4FLnhfasDRaGxW5mhK7Ya2iOuMIvt5NkYVCc3aRy7zkI8CT2rVSWzAqqGxpbeKLFxU_bpKEbLEL86L6oqVwuFw9lfXZ_OdStO9ForPIsWWaBagQkJcMY90f9pka1reR0Wc9uW1njfArjavA"/><div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-low text-on-surface-variant font-label-mono-sm text-label-mono-sm"><span class="text-primary font-bold">₹</span><span>INR Active</span></div></div><div class="flex items-center gap-space-md"><button aria-label="Notifications" class="relative p-2 rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-primary-container shadow-[0_0_8px_#b76dff]"></span></button><button class="flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary-container text-on-primary-container font-headline-sm text-[14px] shadow-[0_0_24px_rgba(183,109,255,0.35)] hover:shadow-[0_0_32px_rgba(183,109,255,0.55)] transition-all"><span>Create Event</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="relative z-10 w-full pt-20 px-space-xl bg-background"><div class="flex flex-col w-full pb-space-2xl">
+<!-- Progress Header Bar -->
+<section class="flex flex-col gap-space-sm mb-space-xl">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-mono-sm text-label-mono-sm uppercase tracking-wider">Blueprint Mode</span>
+<span class="text-on-surface-variant font-label-mono-md text-label-mono-md">Step 01 / 03: Event Blueprint &amp; AI Parameters</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-ping"></span>
+<span class="font-label-mono-sm text-label-mono-sm text-primary">Gemini 2.5 Pro Neural Sync</span>
+</div>
+</div>
+<!-- Glowing Violet Step Indicator -->
+<div class="w-full h-1.5 rounded-full bg-surface-container-high overflow-hidden relative shadow-inner">
+<div class="h-full bg-gradient-to-r from-primary via-primary-container to-tertiary-fixed rounded-full w-1/3 shadow-[0_0_12px_#b76dff] transition-all duration-700"></div>
+</div>
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md pt-space-md">
+<div class="max-w-2xl">
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight">What are we celebrating?</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-1">Choose your celebration category or let Eventora AI personalize every detail from your vision.</p>
+</div>
+<div class="flex items-center gap-2 self-start md:self-auto px-4 py-2 rounded-xl bg-surface-container text-on-surface-variant font-label-mono-sm text-label-mono-sm shadow-sm">
+<span class="material-symbols-outlined text-[18px] text-primary">model_training</span>
+<span>Auto-calibrating Indian Wedding &amp; INR Logic</span>
+</div>
+</div>
+</section>
+<!-- Celebration Category Selector Cards (Bento 3-Column Grid) -->
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-space-lg mb-space-2xl" id="categorySelectionGroup">
+<!-- CARD 1: Wedding (Active / Selected) -->
+<article class="event-card relative rounded-xl p-space-lg bg-surface-container-low shadow-[0_16px_40px_-8px_rgba(0,0,0,0.65),0_0_28px_rgba(183,109,255,0.22)] cursor-pointer transition-all duration-300 transform -translate-y-1 overflow-hidden group" data-card="wedding">
+<!-- Ambient Backlight Violet Glow -->
+<div class="absolute -right-16 -top-16 w-56 h-56 rounded-full bg-primary-container/20 blur-3xl pointer-events-none"></div>
+<!-- Top Meta Badge -->
+<div class="flex items-center justify-between mb-space-md relative z-10">
+<span class="px-3 py-1 rounded-full bg-primary text-on-primary font-label-mono-sm text-label-mono-sm shadow-[0_0_14px_rgba(221,183,255,0.6)] font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">auto_awesome</span> Most Popular
+        </span>
+<div class="w-6 h-6 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-md">
+<span class="material-symbols-outlined text-[16px] font-bold">check</span>
+</div>
+</div>
+<!-- Atmospheric Thumbnail Imagery -->
+<div class="relative w-full h-44 rounded-xl overflow-hidden mb-space-md shadow-md">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A grand royal Indian palace courtyard wedding set in Udaipur at twilight. Thousands of warm flickering fairy lights, marigold and deep violet orchid floral installations cascade from sandstone arches. Luxurious velvet drapes and golden lanterns reflect against a dark shimmering reflecting pool with cinematic atmospheric depth." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnAoh49NosSpswssYYYdO2dQ0DEkVuIHSPa1NIhs1S7jESISkIL9oGxUyyA2dT_16V6Lth8vyDjbex12afS4pOOUyp3-exg1htmIfa-J_X8hCNaJ-gj_f9klrYtByFWwxvL7_jgudHVKQCZvhjBMMFIUJT3aq1OiySkDDu_yf61iaggAjjzlQHZ3G2W4fp7EOiPoZMoxBFE2-8uFcHUt8DyoTqMVn2ac_1epIjuddiFc4Ws2l0ZQhs"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/30 to-transparent"></div>
+<div class="absolute bottom-3 left-3 flex items-center gap-2">
+<span class="px-2.5 py-0.5 rounded-md bg-surface-container-lowest/80 backdrop-blur-md text-on-surface font-label-mono-sm text-label-mono-sm">Royal Palatial</span>
+<span class="px-2.5 py-0.5 rounded-md bg-surface-container-lowest/80 backdrop-blur-md text-primary font-label-mono-sm text-label-mono-sm">99.4% AI Match</span>
+</div>
+</div>
+<div class="relative z-10 flex flex-col gap-space-xs">
+<h2 class="font-headline-md text-headline-md text-on-surface">Wedding</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Elegant ceremonies, royal rituals, and unforgettable moments orchestrated to perfection.</p>
+</div>
+<!-- Feature Chips -->
+<div class="relative z-10 flex flex-wrap gap-1.5 mt-space-md mb-space-md">
+<span class="px-2.5 py-1 rounded-md bg-surface-container-high text-on-surface text-[12px] font-body-sm">Multi-day ceremonies</span>
+<span class="px-2.5 py-1 rounded-md bg-surface-container-high text-on-surface text-[12px] font-body-sm">Sangeet &amp; Reception</span>
+<span class="px-2.5 py-1 rounded-md bg-surface-container-high text-on-surface text-[12px] font-body-sm">Bridal timeline</span>
+<span class="px-2.5 py-1 rounded-md bg-surface-container-high text-on-surface text-[12px] font-body-sm">Guest accommodation</span>
+</div>
+<!-- Metric Footer -->
+<div class="relative z-10 pt-space-sm mt-auto flex items-center justify-between text-on-surface-variant font-label-mono-sm text-label-mono-sm">
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px] text-primary">groups</span> Avg. 200–800 guests</span>
+<span class="text-primary font-semibold">AI Vendor matching active</span>
+</div>
+</article>
+<!-- CARD 2: Birthday Celebration -->
+<article class="event-card relative rounded-xl p-space-lg bg-surface-container-low/70 hover:bg-surface-container-low shadow-md hover:shadow-xl cursor-pointer transition-all duration-300 group overflow-hidden" data-card="birthday">
+<!-- Top Meta Badge -->
+<div class="flex items-center justify-between mb-space-md relative z-10">
+<span class="px-3 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-mono-sm text-label-mono-sm">Milestones &amp; Kids</span>
+<div class="w-6 h-6 rounded-full bg-surface-container-high text-transparent flex items-center justify-center selection-ring">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+</div>
+<!-- Atmospheric Thumbnail Imagery -->
+<div class="relative w-full h-44 rounded-xl overflow-hidden mb-space-md shadow-md">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="An ultra-stylish moody rooftop celebration at midnight under neon violet and warm amber pendant lighting. Sleek contemporary designer dessert display with sculpted metallic cake, artisanal cocktail bar, and intimate velvet lounge seating overlooking city lights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDUNpJ9Cf1198knSRKNpdO_hEDPMpeDRABmnIQ-iAzATC10SsaiPk5ffe1WP8DUXIHxblml_U6CIfBqEdNuPMT4qZNN7bzGIOpsfTHTGQUEH7mpXaoAacBExog50U1C1bJ7UI06bqKx35PYbC9RCRn6on8hQSPyQW66M_f8fg1Lo_-8W0itHGROXrJ3Sjgms6ZkE8CBRys7szh6bKZfNTnaK1G6MZYb1FXgK1qTQHdM8_a5l-LNmyk"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/30 to-transparent"></div>
+<div class="absolute bottom-3 left-3 flex items-center gap-2">
+<span class="px-2.5 py-0.5 rounded-md bg-surface-container-lowest/80 backdrop-blur-md text-on-surface font-label-mono-sm text-label-mono-sm">Intimate Chic</span>
+</div>
+</div>
+<div class="relative z-10 flex flex-col gap-space-xs">
+<h2 class="font-headline-md text-headline-md text-on-surface">Birthday Celebration</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Personalized milestone parties, surprise gatherings, and creative bespoke themes.</p>
+</div>
+<!-- Feature Chips -->
+<div class="relative z-10 flex flex-wrap gap-1.5 mt-space-md mb-space-md">
+<span class="px-2.5 py-1 rounded-md bg-surface-container-high text-on-surface text-[12px] font-body-sm">Cake &amp; dessert styling</span>
+<span class="px-2.5 py-1 rounded-md bg-surface-container-high text-on-surface text-[12px] font-body-sm">Entertainment booking</span>
+<span class="px-2.5 py-1 rounded-md bg-surface-container-high text-on-surface text-[12px] font-body-sm">Theme curation</span>
+</div>
+<!-- Metric Footer -->
+<div class="relative z-10 pt-space-sm mt-auto flex items-center justify-between text-on-surface-variant font-label-mono-sm text-label-mono-sm">
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px]">groups</span> Avg. 30–150 guests</span>
+<span>Dynamic DJ / Host</span>
+</div>
+</article>
+<!-- CARD 3: Community Event -->
+<article class="event-card relative rounded-xl p-space-lg bg-surface-container-low/70 hover:bg-surface-container-low shadow-md hover:shadow-xl cursor-pointer transition-all duration-300 group overflow-hidden" data-card="community">
+<!-- Top Meta Badge -->
+<div class="flex items-center justify-between mb-space-md relative z-10">
+<span class="px-3 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-mono-sm text-label-mono-sm">Large Scale</span>
+<div class="w-6 h-6 rounded-full bg-surface-container-high text-transparent flex items-center justify-center selection-ring">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+</div>
+<!-- Atmospheric Thumbnail Imagery -->
+<div class="relative w-full h-44 rounded-xl overflow-hidden mb-space-md shadow-md">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A grand open-air night cultural festival and charity gala under an illuminated dome canopy. Elegant banquet rounds with glowing centerpieces, large state-of-the-art stage setup with violet and magenta acoustic lighting beams, crowd mingling smoothly." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBn2aQOMWmG1v7NSCLYLU26yaNhBid6CLz5byR7VpBdroey0sbK7nJI-mh3VLyN3dfDNP5rUCG2lPUqJxJ2GRoKJBx72Dlwa1DuHXGpTIhEbY3kP5bOHeeiWt3d56SlcBYs2rq0Bv_QOnnJgr1H4ot-UA4sxv-d4ZaS8KxYqG3FsDgpkfAv2DfulLlqdQ0ZLR-IaSHelVlO-pdes1qiJS-AjsMvhDlgY3GX3EbZGWovh8fzoZRGnoQM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/30 to-transparent"></div>
+<div class="absolute bottom-3 left-3 flex items-center gap-2">
+<span class="px-2.5 py-0.5 rounded-md bg-surface-container-lowest/80 backdrop-blur-md text-on-surface font-label-mono-sm text-label-mono-sm">Festival &amp; Gala</span>
+</div>
+</div>
+<div class="relative z-10 flex flex-col gap-space-xs">
+<h2 class="font-headline-md text-headline-md text-on-surface">Community &amp; Cultural Event</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Festivals, charity galas, neighborhood gatherings, and shared cultural experiences.</p>
+</div>
+<!-- Feature Chips -->
+<div class="relative z-10 flex flex-wrap gap-1.5 mt-space-md mb-space-md">
+<span class="px-2.5 py-1 rounded-md bg-surface-container-high text-on-surface text-[12px] font-body-sm">Ticketing &amp; RSVP</span>
+<span class="px-2.5 py-1 rounded-md bg-surface-container-high text-on-surface text-[12px] font-body-sm">Crowd logistics</span>
+<span class="px-2.5 py-1 rounded-md bg-surface-container-high text-on-surface text-[12px] font-body-sm">Sponsorships</span>
+<span class="px-2.5 py-1 rounded-md bg-surface-container-high text-on-surface text-[12px] font-body-sm">Stage &amp; Audio setup</span>
+</div>
+<!-- Metric Footer -->
+<div class="relative z-10 pt-space-sm mt-auto flex items-center justify-between text-on-surface-variant font-label-mono-sm text-label-mono-sm">
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px]">groups</span> Avg. 100–2,000 guests</span>
+<span>Permits &amp; Production</span>
+</div>
+</article>
+</section>
+<!-- AI Blueprint Setup Form Panel (Asymmetrical Glass Container) -->
+<section class="rounded-xl bg-surface-container-lowest/80 backdrop-blur-2xl p-space-xl shadow-[0_24px_64px_-12px_rgba(0,0,0,0.85)] relative overflow-hidden mb-space-xl">
+<!-- Ambient subtle violet glow pool -->
+<div class="absolute -left-20 bottom-0 w-80 h-80 rounded-full bg-primary-container/15 blur-3xl pointer-events-none"></div>
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm pb-space-lg mb-space-lg">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-primary-container/20 text-primary flex items-center justify-center shadow-inner">
+<span class="material-symbols-outlined text-[24px]">tune</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Event Blueprint Parameters</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Configure initial constraints; our neural pipeline synthesizes run-of-show accordingly.</p>
+</div>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant font-label-mono-sm text-label-mono-sm bg-surface-container px-3 py-1.5 rounded-lg">
+<span class="material-symbols-outlined text-[16px] text-tertiary">bolt</span>
+<span>Auto-sync enabled for INR calculations</span>
+</div>
+</div>
+<!-- 2-Column Form Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-space-xl">
+<!-- Left Column: Primary Identifiers & Financials -->
+<div class="flex flex-col gap-space-lg">
+<!-- Field 1: Event Name -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-mono-sm text-label-mono-sm text-on-surface-variant uppercase tracking-wider flex items-center justify-between">
+<span>Event Project Title</span>
+<span class="text-primary font-bold">Required</span>
+</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">drive_file_rename_outline</span>
+<input class="w-full pl-12 pr-4 py-3 rounded-xl bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none focus:bg-surface-container shadow-inner transition-colors" type="text" value="Dream Wedding 2027 — Aarav &amp; Meera"/>
+</div>
+</div>
+<!-- Field 2: Date & Duration -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-1.5">
+<label class="font-label-mono-sm text-label-mono-sm text-on-surface-variant uppercase tracking-wider">Event Date</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">calendar_month</span>
+<input class="w-full pl-12 pr-4 py-3 rounded-xl bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none focus:bg-surface-container transition-colors" type="text" value="Nov 18, 2027"/>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-mono-sm text-label-mono-sm text-on-surface-variant uppercase tracking-wider">Duration Span</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">timelapse</span>
+<input class="w-full pl-12 pr-4 py-3 rounded-xl bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none focus:bg-surface-container transition-colors" type="text" value="3 Days (Full Sequence)"/>
+</div>
+</div>
+</div>
+<!-- Field 3: Budget Input with Quick Presets -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<label class="font-label-mono-sm text-label-mono-sm text-on-surface-variant uppercase tracking-wider">Estimated Total Budget</label>
+<span class="font-label-mono-sm text-label-mono-sm text-secondary">Currency: Indian Rupee (₹)</span>
+</div>
+<div class="relative">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 font-headline-md text-headline-sm text-primary font-bold">₹</span>
+<input class="w-full pl-10 pr-4 py-3 rounded-xl bg-surface-container-low text-on-surface font-headline-sm text-headline-sm tracking-tight focus:outline-none focus:bg-surface-container transition-colors" id="budgetInput" type="text" value="5,00,000"/>
+</div>
+<!-- Quick Presets -->
+<div class="flex flex-wrap items-center gap-2 pt-1">
+<button class="budget-chip px-3 py-1 rounded-full bg-surface-container text-on-surface-variant hover:text-on-surface font-label-mono-sm text-label-mono-sm transition-colors" data-value="3,00,000" type="button">₹3L Starter</button>
+<button class="budget-chip px-3 py-1 rounded-full bg-primary-container text-on-primary-container font-label-mono-sm text-label-mono-sm font-bold shadow-[0_0_10px_rgba(183,109,255,0.4)]" data-value="5,00,000" type="button">₹5L Balanced</button>
+<button class="budget-chip px-3 py-1 rounded-full bg-surface-container text-on-surface-variant hover:text-on-surface font-label-mono-sm text-label-mono-sm transition-colors" data-value="10,00,000" type="button">₹10L Luxury</button>
+<button class="budget-chip px-3 py-1 rounded-full bg-surface-container text-on-surface-variant hover:text-on-surface font-label-mono-sm text-label-mono-sm transition-colors" data-value="25,00,000" type="button">Custom Royal</button>
+</div>
+</div>
+</div>
+<!-- Right Column: Scale, Aesthetics & Prompt Notes -->
+<div class="flex flex-col gap-space-lg">
+<!-- Field 4: Guest Scale Slider -->
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<label class="font-label-mono-sm text-label-mono-sm text-on-surface-variant uppercase tracking-wider">Anticipated Guest Count</label>
+<span class="px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-mono-md text-label-mono-md font-bold" id="guestCountBadge">350 Guests</span>
+</div>
+<div class="py-2">
+<input class="w-full h-2 rounded-lg bg-surface-container-high appearance-none cursor-pointer accent-primary" id="guestSlider" max="1200" min="50" step="25" type="range" value="350"/>
+</div>
+<div class="flex justify-between font-label-mono-sm text-label-mono-sm text-on-surface-variant/70">
+<span>50 (Intimate)</span>
+<span>350 (Selected)</span>
+<span>1,200+ (Extravaganza)</span>
+</div>
+</div>
+<!-- Field 5: Preferred Theme & Aesthetic -->
+<div class="flex flex-col gap-2">
+<label class="font-label-mono-sm text-label-mono-sm text-on-surface-variant uppercase tracking-wider">Curated Aesthetic Moodboard</label>
+<div class="grid grid-cols-2 gap-2" id="aestheticThemes">
+<button class="theme-pill flex items-center gap-2.5 p-3 rounded-xl bg-primary-container/25 text-on-surface shadow-[0_0_12px_rgba(183,109,255,0.25)] text-left transition-all" type="button">
+<span class="w-3.5 h-3.5 rounded-full bg-primary shadow-[0_0_8px_#ddb7ff]"></span>
+<span class="font-body-sm text-body-sm font-semibold truncate">Royal Violet &amp; Gold</span>
+</button>
+<button class="theme-pill flex items-center gap-2.5 p-3 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-on-surface text-left transition-all" type="button">
+<span class="w-3.5 h-3.5 rounded-full bg-secondary-fixed"></span>
+<span class="font-body-sm text-body-sm truncate">Minimalist Lavender</span>
+</button>
+<button class="theme-pill flex items-center gap-2.5 p-3 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-on-surface text-left transition-all" type="button">
+<span class="w-3.5 h-3.5 rounded-full bg-secondary-container"></span>
+<span class="font-body-sm text-body-sm truncate">Bohemian Twilight</span>
+</button>
+<button class="theme-pill flex items-center gap-2.5 p-3 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-on-surface text-left transition-all" type="button">
+<span class="w-3.5 h-3.5 rounded-full bg-emerald-400"></span>
+<span class="font-body-sm text-body-sm truncate">Enchanted Garden</span>
+</button>
+</div>
+</div>
+<!-- Field 6: AI Inspiration Notes / Prompts -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-mono-sm text-label-mono-sm text-on-surface-variant uppercase tracking-wider flex items-center justify-between">
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px] text-primary">psychology</span> AI Creative Prompt Notes</span>
+<span class="text-tertiary font-label-mono-sm">Natural Language</span>
+</label>
+<div class="relative">
+<textarea class="w-full p-3.5 rounded-xl bg-surface-container-low text-on-surface font-body-sm text-body-sm focus:outline-none focus:bg-surface-container transition-colors resize-none leading-relaxed" rows="3">Heritage palace venue in Udaipur or Jaipur with vegan catering options and ambient acoustic sufi night for the Sangeet.</textarea>
+<div class="absolute bottom-2.5 right-3 flex items-center gap-1 text-on-surface-variant font-label-mono-sm text-label-mono-sm pointer-events-none">
+<span class="material-symbols-outlined text-[14px] text-primary">arrow_back_ios_new</span>
+<span>114 chars tokenized</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Bottom Action Section -->
+<section class="flex flex-col sm:flex-row items-center justify-between gap-space-lg p-space-lg rounded-xl bg-surface-container-low shadow-xl">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[20px]">neurology</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-[16px] text-on-surface font-semibold">Generative Engine Standby</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-mono-sm text-[10px]">~8 seconds latency</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Eventora AI will synthesize budget breakdowns, timeline milestones, and vendor proposals.</p>
+</div>
+</div>
+<!-- Generative Call to Action -->
+<div class="flex items-center gap-space-md w-full sm:w-auto shrink-0">
+<button class="w-full sm:w-auto px-8 py-3.5 rounded-full bg-gradient-to-r from-primary-container via-primary to-tertiary text-on-primary-container font-headline-sm text-[15px] font-bold shadow-[0_0_24px_rgba(183,109,255,0.45)] hover:shadow-[0_0_36px_rgba(183,109,255,0.7)] hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2 group" type="button">
+<span>Generate My AI Plan</span>
+<span class="material-symbols-outlined text-[20px] group-hover:rotate-12 transition-transform">auto_awesome</span>
+</button>
+</div>
+</section>
+</div>
+<script>
+  // Interactive category card selection
+  const cards = document.querySelectorAll('.event-card');
+  cards.forEach(card => {
+    card.addEventListener('click', () => {
+      cards.forEach(c => {
+        c.classList.remove('bg-surface-container-low', 'shadow-[0_16px_40px_-8px_rgba(0,0,0,0.65),0_0_28px_rgba(183,109,255,0.22)]', '-translate-y-1');
+        c.classList.add('bg-surface-container-low/70');
+        const ring = c.querySelector('.selection-ring');
+        if (ring) {
+          ring.classList.add('bg-surface-container-high', 'text-transparent');
+          ring.classList.remove('bg-primary', 'text-on-primary');
+        }
+      });
+      card.classList.add('bg-surface-container-low', 'shadow-[0_16px_40px_-8px_rgba(0,0,0,0.65),0_0_28px_rgba(183,109,255,0.22)]', '-translate-y-1');
+      card.classList.remove('bg-surface-container-low/70');
+      const activeRing = card.querySelector('.selection-ring');
+      if (activeRing) {
+        activeRing.classList.remove('bg-surface-container-high', 'text-transparent');
+        activeRing.classList.add('bg-primary', 'text-on-primary');
+      }
+    });
+  });
+
+  // Guest count slider synchronizer
+  const slider = document.getElementById('guestSlider');
+  const badge = document.getElementById('guestCountBadge');
+  if (slider && badge) {
+    slider.addEventListener('input', (e) => {
+      badge.textContent = `${e.target.value} Guests`;
+    });
+  }
+
+  // Budget quick preset buttons
+  const budgetInput = document.getElementById('budgetInput');
+  const budgetChips = document.querySelectorAll('.budget-chip');
+  budgetChips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      budgetChips.forEach(b => {
+        b.className = 'budget-chip px-3 py-1 rounded-full bg-surface-container text-on-surface-variant hover:text-on-surface font-label-mono-sm text-label-mono-sm transition-colors';
+      });
+      chip.className = 'budget-chip px-3 py-1 rounded-full bg-primary-container text-on-primary-container font-label-mono-sm text-label-mono-sm font-bold shadow-[0_0_10px_rgba(183,109,255,0.4)]';
+      if (budgetInput) {
+        budgetInput.value = chip.getAttribute('data-value');
+      }
+    });
+  });
+
+  // Aesthetic theme pills
+  const themePills = document.querySelectorAll('.theme-pill');
+  themePills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      themePills.forEach(p => {
+        p.classList.remove('bg-primary-container/25', 'shadow-[0_0_12px_rgba(183,109,255,0.25)]');
+        p.classList.add('bg-surface-container-low');
+        const text = p.querySelector('span:nth-child(2)');
+        if (text) text.classList.remove('font-semibold');
+      });
+      pill.classList.remove('bg-surface-container-low');
+      pill.classList.add('bg-primary-container/25', 'shadow-[0_0_12px_rgba(183,109,255,0.25)]');
+      const activeText = pill.querySelector('span:nth-child(2)');
+      if (activeText) activeText.classList.add('font-semibold');
+    });
+  });
+</script></main></div></body></html>

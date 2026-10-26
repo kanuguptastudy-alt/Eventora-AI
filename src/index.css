@@ -1,0 +1,178 @@
+@import "tailwindcss";
+
+@theme {
+  --color-surface: #15121a;
+  --color-surface-dim: #15121a;
+  --color-surface-bright: #3b3741;
+  --color-surface-container-lowest: #100d15;
+  --color-surface-container-low: #1d1a22;
+  --color-surface-container: #211e27;
+  --color-surface-container-high: #2c2831;
+  --color-surface-container-highest: #37333c;
+  --color-on-surface: #e8e0ec;
+  --color-on-surface-variant: #cfc2d6;
+  --color-inverse-surface: #e8e0ec;
+  --color-inverse-on-surface: #332f38;
+  --color-outline: #988d9f;
+  --color-outline-variant: #4d4354;
+  --color-surface-tint: #ddb7ff;
+  --color-primary: #ddb7ff;
+  --color-on-primary: #490080;
+  --color-primary-container: #b76dff;
+  --color-on-primary-container: #400071;
+  --color-inverse-primary: #842bd2;
+  --color-secondary: #c8c2e9;
+  --color-on-secondary: #302c4b;
+  --color-secondary-container: #494566;
+  --color-on-secondary-container: #bab4da;
+  --color-tertiary: #ddb8ff;
+  --color-on-tertiary: #490081;
+  --color-tertiary-container: #b175ec;
+  --color-on-tertiary-container: #400071;
+  --color-error: #ffb4ab;
+  --color-on-error: #690005;
+  --color-error-container: #93000a;
+  --color-on-error-container: #ffdad6;
+  --color-primary-fixed: #f0dbff;
+  --color-primary-fixed-dim: #ddb7ff;
+  --color-on-primary-fixed: #2c0051;
+  --color-on-primary-fixed-variant: #6900b3;
+  --color-secondary-fixed: #e5deff;
+  --color-secondary-fixed-dim: #c8c2e9;
+  --color-on-secondary-fixed: #1b1735;
+  --color-on-secondary-fixed-variant: #474363;
+  --color-tertiary-fixed: #f0dbff;
+  --color-tertiary-fixed-dim: #ddb8ff;
+  --color-on-tertiary-fixed: #2c0051;
+  --color-on-tertiary-fixed-variant: #62259b;
+  --color-background: #15121a;
+  --color-on-background: #e8e0ec;
+  --color-surface-variant: #37333c;
+
+  --font-display-hero: 'Outfit', sans-serif;
+  --font-headline-xl: 'Outfit', sans-serif;
+  --font-headline-lg: 'Outfit', sans-serif;
+  --font-headline-md: 'Outfit', sans-serif;
+  --font-headline-sm: 'Outfit', sans-serif;
+  --font-body-lg: 'Plus Jakarta Sans', sans-serif;
+  --font-body-md: 'Plus Jakarta Sans', sans-serif;
+  --font-body-sm: 'Plus Jakarta Sans', sans-serif;
+  --font-caption: 'Plus Jakarta Sans', sans-serif;
+  --font-label-mono-md: 'JetBrains Mono', monospace;
+  --font-label-mono-sm: 'JetBrains Mono', monospace;
+
+  --spacing-gutter: 1.5rem;
+  --spacing-gutter-sm: 1rem;
+  --spacing-margin: 2.5rem;
+  --spacing-margin-mobile: 1rem;
+  --spacing-space-xs: 0.25rem;
+  --spacing-space-sm: 0.5rem;
+  --spacing-space-md: 1rem;
+  --spacing-space-lg: 1.5rem;
+  --spacing-space-xl: 2.5rem;
+  --spacing-space-2xl: 4rem;
+}
+
+@layer base {
+  html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #15121a;
+    color: #e8e0ec;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    overflow-x: hidden;
+  }
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  * {
+    scrollbar-width: none;
+  }
+}
+
+@utility text-display-hero {
+  font-size: 56px;
+  line-height: 64px;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+}
+@utility text-display-hero-mobile {
+  font-size: 36px;
+  line-height: 44px;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+@utility text-headline-xl {
+  font-size: 40px;
+  line-height: 48px;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+}
+@utility text-headline-xl-mobile {
+  font-size: 28px;
+  line-height: 36px;
+  letter-spacing: -0.015em;
+  font-weight: 600;
+}
+@utility text-headline-lg {
+  font-size: 32px;
+  line-height: 40px;
+  letter-spacing: -0.015em;
+  font-weight: 600;
+}
+@utility text-headline-md {
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: -0.01em;
+  font-weight: 600;
+}
+@utility text-headline-sm {
+  font-size: 20px;
+  line-height: 28px;
+  letter-spacing: -0.005em;
+  font-weight: 500;
+}
+@utility text-body-lg {
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: -0.005em;
+  font-weight: 400;
+}
+@utility text-body-md {
+  font-size: 15px;
+  line-height: 24px;
+  letter-spacing: 0em;
+  font-weight: 400;
+}
+@utility text-body-sm {
+  font-size: 13px;
+  line-height: 20px;
+  letter-spacing: 0.005em;
+  font-weight: 400;
+}
+@utility text-label-mono-md {
+  font-size: 13px;
+  line-height: 18px;
+  letter-spacing: 0.04em;
+  font-weight: 500;
+}
+@utility text-label-mono-sm {
+  font-size: 11px;
+  line-height: 16px;
+  letter-spacing: 0.06em;
+  font-weight: 500;
+}
+@utility text-caption {
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.01em;
+  font-weight: 500;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
+}
