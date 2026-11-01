@@ -150,7 +150,7 @@ export const QuickOnboardingModal: React.FC<QuickOnboardingModalProps> = ({
           category: v.role,
           estimatedQuote: v.estimatedQuote,
           actualCost: 0,
-          status: v.status,
+          status: 'Shortlisted',
           notes: v.notes,
         })),
         guests: [
