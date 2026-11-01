@@ -175,7 +175,7 @@ export const QuickOnboardingModal: React.FC<QuickOnboardingModalProps> = ({
       onClose();
     } catch (err) {
       console.error('Error generating plan:', err);
-      onShowToast('Plan generation experienced an error. Loading starter blueprint.');
+      onShowToast(err instanceof Error ? err.message : 'AI blueprint generation failed. Your event details have not been discarded. Please retry.');
     } finally {
       setIsGenerating(false);
     }
