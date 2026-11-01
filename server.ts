@@ -12,7 +12,40 @@ const __dirname = path.dirname(__filename);
 const app = express();
 const port = parseInt(process.env.PORT || '3000', 10);
 
-app.use(express.json());
+app.disable('x-powered-by');
+app.use(express.json({ limit: '32kb', strict: true }));
+
+app.use((_req, res, next) => {
+  res.setHeader('X-Content-Type-Options', 'nosniff');
+  res.setHeader('X-Frame-Options', 'DENY');
+  res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
+  res.setHeader('Permissions-Policy', 'camera=(), microphone=(), geolocation=()');
+  next();
+});
+
+// In-memory per-IP throttle. Use a shared store (for example Redis) when deploying
+// multiple server instances; this protects a single-instance deployment.
+const aiRequestWindows = new Map<string, { count: number; resetAt: number }>();
+app.use('/api/gemini', (req, res, next) => {
+  const now = Date.now();
+  const key = req.ip || req.socket.remoteAddress || 'unknown';
+  let window = aiRequestWindows.get(key);
+  if (!window || window.resetAt <= now) {
+    window = { count: 0, resetAt: now + 60_000 };
+    aiRequestWindows.set(key, window);
+  }
+  if (window.count >= 12) {
+    res.setHeader('Retry-After', String(Math.ceil((window.resetAt - now) / 1000)));
+    return res.status(429).json({ error: 'Too many AI requests. Please wait a minute and try again.' });
+  }
+  window.count += 1;
+  if (aiRequestWindows.size > 5000) {
+    for (const [ip, entry] of aiRequestWindows) {
+      if (entry.resetAt <= now) aiRequestWindows.delete(ip);
+    }
+  }
+  next();
+});
 
 // Initialize Gemini Client
 const apiKey = process.env.GEMINI_API_KEY;
@@ -52,8 +85,33 @@ app.post('/api/gemini/generate-plan', async (req, res) => {
       duration,
     } = req.body;
 
-    if (!title || !type) {
-      return res.status(400).json({ error: 'Title and event type are required.' });
+    const validEventTypes = ['wedding', 'birthday', 'community', 'anniversary', 'school', 'festival'];
+    const isBoundedText = (value: unknown, max: number) =>
+      typeof value === 'string' && value.trim().length > 0 && value.length <= max;
+
+    if (!isBoundedText(title, 120) || !isBoundedText(type, 32) || !validEventTypes.includes(type)) {
+      return res.status(400).json({ error: 'A valid event title and event type are required.' });
+    }
+    if (date !== undefined && (typeof date !== 'string' || date.length > 80)) {
+      return res.status(400).json({ error: 'Event date must be 80 characters or fewer.' });
+    }
+    if (location !== undefined && (typeof location !== 'string' || location.length > 160)) {
+      return res.status(400).json({ error: 'Event location must be 160 characters or fewer.' });
+    }
+    if (theme !== undefined && (typeof theme !== 'string' || theme.length > 100)) {
+      return res.status(400).json({ error: 'Event theme must be 100 characters or fewer.' });
+    }
+    if (specialNotes !== undefined && (typeof specialNotes !== 'string' || specialNotes.length > 2000)) {
+      return res.status(400).json({ error: 'Additional requirements must be 2,000 characters or fewer.' });
+    }
+    if (duration !== undefined && (typeof duration !== 'string' || duration.length > 100)) {
+      return res.status(400).json({ error: 'Event duration must be 100 characters or fewer.' });
+    }
+    if (guestCount !== undefined && (!Number.isInteger(Number(guestCount)) || Number(guestCount) < 1 || Number(guestCount) > 5000)) {
+      return res.status(400).json({ error: 'Guest count must be an integer between 1 and 5,000.' });
+    }
+    if (budget !== undefined && (!Number.isFinite(Number(budget)) || Number(budget) <= 0 || Number(budget) > 100000000)) {
+      return res.status(400).json({ error: 'Budget must be greater than zero and no more than ₹10 crore.' });
     }
 
     if (!ai) {
