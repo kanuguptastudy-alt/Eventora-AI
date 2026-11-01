@@ -22,6 +22,18 @@ export async function checkAIStatus(): Promise<{ active: boolean; model: string 
   }
 }
 
+function isValidGeneratedPlan(plan: any): boolean {
+  if (!plan || typeof plan !== 'object' || Array.isArray(plan)) return false;
+  if (typeof plan.conceptSummary !== 'string' || !plan.conceptSummary.trim()) return false;
+  if (!plan.themePalette || typeof plan.themePalette.name !== 'string') return false;
+  const arrays = ['budgetBreakdown', 'timelineTasks', 'runOfShow', 'vendorRecommendations', 'contingencyPlans', 'aiOptimizations'];
+  if (!arrays.every((key) => Array.isArray(plan[key]))) return false;
+  if (plan.budgetBreakdown.length === 0 || plan.timelineTasks.length === 0 || plan.runOfShow.length === 0) return false;
+  return plan.budgetBreakdown.every((item: any) =>
+    typeof item.category === 'string' && Number.isFinite(item.allocatedAmount) && item.allocatedAmount >= 0
+  );
+}
+
 export async function requestAIGeneratedPlan(req: PlanGenerationRequest): Promise<{
   conceptSummary: string;
   themePalette: {
@@ -57,25 +69,34 @@ export async function requestAIGeneratedPlan(req: PlanGenerationRequest): Promis
     type: string;
   }[];
 }> {
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), 60000);
+
   try {
     const res = await fetch('/api/gemini/generate-plan', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(req),
+      signal: controller.signal,
+      cache: 'no-store',
     });
 
-    if (res.ok) {
-      const data = await res.json();
-      if (data.plan) {
-        return data.plan;
-      }
+    const payload = await res.json().catch(() => null);
+    if (!res.ok) {
+      throw new Error(payload?.error || `Blueprint generation failed (HTTP ${res.status}).`);
     }
-  } catch (err) {
-    console.warn('Backend Gemini API call encountered error, activating neural algorithmic engine:', err);
+    if (!payload?.success || !isValidGeneratedPlan(payload.plan)) {
+      throw new Error('The AI service returned an incomplete blueprint. Your event has not been created; please retry.');
+    }
+    return payload.plan;
+  } catch (error) {
+    if (error instanceof Error && error.name === 'AbortError') {
+      throw new Error('Blueprint generation timed out. Your event details are still available; please retry.');
+    }
+    throw error instanceof Error ? error : new Error('Unable to generate the AI blueprint.');
+  } finally {
+    clearTimeout(timeoutId);
   }
-
-  // Deterministic high-caliber fallback engine matching Eventora AI quality
-  return generateDeterministicPlan(req);
 }
 
 export async function sendCopilotMessage(

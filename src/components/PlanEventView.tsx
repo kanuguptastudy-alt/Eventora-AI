@@ -86,8 +86,16 @@ export const PlanEventView: React.FC<PlanEventViewProps> = ({
       setError('Please provide an event title.');
       return;
     }
-    if (budget <= 0) {
-      setError('Please enter a valid budget.');
+    if (!Number.isFinite(budget) || budget <= 0 || budget > 100000000) {
+      setError('Enter a budget greater than ₹0 and no more than ₹10 crore.');
+      return;
+    }
+    if (!Number.isInteger(guestCount) || guestCount < 1 || guestCount > 5000) {
+      setError('Guest count must be between 1 and 5,000.');
+      return;
+    }
+    if (!location.trim() || location.trim().length > 160) {
+      setError('Enter a location of 160 characters or fewer.');
       return;
     }
 
@@ -96,10 +104,7 @@ export const PlanEventView: React.FC<PlanEventViewProps> = ({
     setGenerationStep('Initializing Neural Ingestion Pipeline...');
 
     try {
-      setTimeout(() => setGenerationStep('Synthesizing Category Allocations in INR (₹)...'), 800);
-      setTimeout(() => setGenerationStep('Formulating Phase Timelines & Critical Deadlines...'), 1600);
-      setTimeout(() => setGenerationStep('Assembling Run-of-Show Choreography...'), 2400);
-
+      setGenerationStep('Generating a tailored AI blueprint and validating its budget...');
       const generatedPlan = await requestAIGeneratedPlan({
         title,
         type: selectedCategory,
@@ -174,7 +179,7 @@ export const PlanEventView: React.FC<PlanEventViewProps> = ({
           category: v.role,
           estimatedQuote: v.estimatedQuote,
           actualCost: 0,
-          status: v.status,
+          status: 'Shortlisted',
           notes: v.notes,
         })),
         guests: [
